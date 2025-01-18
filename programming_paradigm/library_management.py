@@ -4,7 +4,7 @@ class Book:
         self.author = author
         self._is_checked_out = False
     
-    def check_out(self):
+    def return_book(self):
         self._is_checked_out = True
 
     def is_checked_out(self):
@@ -23,7 +23,7 @@ class Library:
     def check_out_book(self, title):
         for book in self._books:
             if book.title == title and not book.is_checked_out():
-                book.check_out()
+                book.return_book()
                 return True
         return False
     
